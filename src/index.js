@@ -8,7 +8,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const element = <h1>Hello, Platzi Badges!</h1>;
+let myName= {
+    name:'Edwin',
+    lastname: 'Caceres',
+    age: 30,
+};
+let  { name:mainVar ,lastname, age}=myName; //Desestructuramos el objeto para acceder facil y la asignamos a otra variable
+
+const element = <h1>Hello I'm <i>{mainVar}</i>, this is my first project in React!</h1>;
 
 const container = document.getElementById('app');
 
