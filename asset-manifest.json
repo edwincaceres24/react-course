@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/edwincaceres24/react-course/static/css/main.6b662a5a.chunk.css",
+    "main.js": "/edwincaceres24/react-course/static/js/main.0f7bf414.chunk.js",
+    "main.js.map": "/edwincaceres24/react-course/static/js/main.0f7bf414.chunk.js.map",
+    "runtime-main.js": "/edwincaceres24/react-course/static/js/runtime-main.ba0e6857.js",
+    "runtime-main.js.map": "/edwincaceres24/react-course/static/js/runtime-main.ba0e6857.js.map",
+    "static/css/2.77cf4ef6.chunk.css": "/edwincaceres24/react-course/static/css/2.77cf4ef6.chunk.css",
+    "static/js/2.9813a6ca.chunk.js": "/edwincaceres24/react-course/static/js/2.9813a6ca.chunk.js",
+    "static/js/2.9813a6ca.chunk.js.map": "/edwincaceres24/react-course/static/js/2.9813a6ca.chunk.js.map",
+    "index.html": "/edwincaceres24/react-course/index.html",
+    "static/css/2.77cf4ef6.chunk.css.map": "/edwincaceres24/react-course/static/css/2.77cf4ef6.chunk.css.map",
+    "static/css/main.6b662a5a.chunk.css.map": "/edwincaceres24/react-course/static/css/main.6b662a5a.chunk.css.map",
+    "static/js/2.9813a6ca.chunk.js.LICENSE.txt": "/edwincaceres24/react-course/static/js/2.9813a6ca.chunk.js.LICENSE.txt",
+    "static/media/badge-header.2c3af956.svg": "/edwincaceres24/react-course/static/media/badge-header.2c3af956.svg",
+    "static/media/edwincaceres_img.c494deed.jpeg": "/edwincaceres24/react-course/static/media/edwincaceres_img.c494deed.jpeg",
+    "static/media/logo.235d00e1.svg": "/edwincaceres24/react-course/static/media/logo.235d00e1.svg",
+    "static/media/badge.css": "/edwincaceres24/react-course/static/media/stars.d4d2376b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ba0e6857.js",
+    "static/css/2.77cf4ef6.chunk.css",
+    "static/js/2.9813a6ca.chunk.js",
+    "static/css/main.6b662a5a.chunk.css",
+    "static/js/main.0f7bf414.chunk.js"
+  ]
+}
