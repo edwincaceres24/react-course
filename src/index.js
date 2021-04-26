@@ -8,6 +8,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Badge from './components/badge';
+import BadgeNew from './pages/badgenew.js';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 
 let myName= {
     name:'Edwin',
@@ -19,10 +22,10 @@ let  { name:mainVar ,lastname, age , portfolio}=myName; //Desestructuramos el ob
 
 const portfolioText = React.createElement('a',{href:portfolio, target: '-blank'}, `portfolio`);
 
-const element = React.createElement('h1',{},`Hello I'm ${mainVar} ${lastname}, I'm ${age} years old and here you can see my `);
-const jsx = 
-(<h1>Hi, my name is {mainVar} {lastname}.
-This is my <a href={portfolio} target='_blank'>portfolio</a> </h1>);
+// const element = React.createElement('h1',{},`Hello I'm ${mainVar} ${lastname}, I'm ${age} years old and here you can see my `);
+// const jsx = 
+// (<h1>Hi, my name is {mainVar} {lastname}.
+// This is my <a href={portfolio} target='_blank'>portfolio</a> </h1>);
 
 const container = document.getElementById('app');
 
@@ -30,6 +33,14 @@ const container = document.getElementById('app');
 
 
 // ReactDOM.render(__qué__, __dónde__);
-ReactDOM.render(<Badge />, container);
+// ReactDOM.render(<Badge 
+//     firstName={`${mainVar}`} //This is from an object formerly defined
+//     lastName="Cáceres"
+//     jobTittle="Ecommerce Consultant"
+//     twitter="edDev"
+
+// />, container); //Add JSX of the component
+
+ReactDOM.render(<BadgeNew/>, container); 
 
 console.log(portfolioText)
