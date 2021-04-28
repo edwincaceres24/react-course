@@ -18,7 +18,7 @@ class Badge extends Component{  //Creamos la clase extendemos la propieadad de R
                         </figcaption>
                 </figure>
                 <div className="Badge__section-container">
-                    <p className="Badge__section-info">I'm a {jobTitle}</p>
+                    <p className="Badge__section-info">I'm an {jobTitle}</p>
                     <p className="Badge__section-info">@{twitter}</p>
                 </div>
             </section>

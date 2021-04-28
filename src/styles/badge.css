@@ -1,7 +1,9 @@
 :root{
   font-family: 'Roboto', sans-serif;
 }
-
+h2,h1{
+  text-align: center;
+}
 .Badge {
     background: #ffffff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
@@ -68,3 +70,10 @@
     font-weight: bold;
     font-style: italic;
   }
+
+@media screen and (max-width:650px){
+.Badge__section-name{
+  flex-direction: column;
+}
+  
+}
