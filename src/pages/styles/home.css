@@ -1,0 +1,18 @@
+.home--background-image{
+  background-image: url("../../images/stars.svg");
+  /* background: url(".../images/stars.svg"), #1b1b25; */
+  background-color: black;
+  height: 100vh;
+  display:grid;
+  place-items:center;
+}
+.home--info-container{
+  margin: auto 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.home--main-text{
+  color: white;
+}

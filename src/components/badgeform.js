@@ -22,7 +22,7 @@ handleSubmit= (e)=>{
 };
     render(){
         return(
-            <div>
+            <>
                 <h1>New Attendant</h1>
             <form onSubmit={this.handleSubmit}>    
                 <div className="form-group">
@@ -53,7 +53,7 @@ handleSubmit= (e)=>{
                 </div>
                 <button onClick={this.handleClick} className="btn btn-primary">Save</button>   {/* Type submit es su valor por omisión */}
             </form>    
-            </div>
+            </>
            
         )
     }

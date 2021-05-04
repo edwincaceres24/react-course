@@ -25,7 +25,6 @@ class BadgeNew extends Component {
     render(){
         return(
     <main>
-        <Navbar />
         <div className="BadgeNew__hero">
             <img className="" src={logo} alt="Logo"/>
         </div>

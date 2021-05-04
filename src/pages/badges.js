@@ -41,10 +41,9 @@ class Badges extends Component {
     }
     render() {
         return(
-            <div >
+            <>
 
-            <Navbar />
-                <div className="Badge">
+                <main className="Badge">
                     <div className="Badges__hero">
                         <picture className="Badge__container">
                             <img className="Badges_conf_logo" src={confLogo} alt="Logo"/>
@@ -67,8 +66,8 @@ class Badges extends Component {
                     />)}
                 </section>
 
-                </div>
-            </div>
+                </main>
+            </>
         )
 
     }

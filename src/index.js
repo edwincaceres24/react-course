@@ -9,6 +9,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Badge from './components/badge';
 import Badges from './pages/badges.js';
+import App from './components/app.js';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -41,6 +42,6 @@ const container = document.getElementById('app');
 
 // />, container); //Add JSX of the component
 
-ReactDOM.render(<Badges/>, container); 
+ReactDOM.render(<App/>, container); 
 
 console.log(portfolioText)
