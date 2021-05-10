@@ -44,4 +44,4 @@ const container = document.getElementById('app');
 
 ReactDOM.render(<App/>, container); 
 
-console.log(portfolioText)
+// console.log(portfolioText)

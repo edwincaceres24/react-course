@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Badge from '../components/badge.js';
-import Navbar from '../components/navbar.js';
+import LifeCycle from '../components/lifecycle.js';
 import logo from '../images/badge-header.svg';
 import BadgeForm from '../components/badgeform.js';
 import '../styles/badge.css'
@@ -46,6 +46,7 @@ class BadgeNew extends Component {
                 </div>
             </div>
         </section>
+        <LifeCycle/>
     </main>
             
         )
