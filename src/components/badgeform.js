@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import '../styles/badge.css'; 
+import md5 from 'md5';
 
 
 class BadgeForm extends Component { 
@@ -13,18 +14,19 @@ class BadgeForm extends Component {
 //     //     value: e.target.value}) //Print the required event and equals to value, how is that possible? Is the same thing to let value = e.target.value
 //    };
    handleClick= (e)=>{
-
     console.log("Clicked")
-};
-handleSubmit= (e)=>{
-    e.preventDefault(); //This prevent the form to be sent
-    console.log("The form was submitted")
-};
+
+    };
+   
+// handleSubmit= (e)=>{
+//     e.preventDefault(); //This prevent the form to be sent
+//     console.log("The form was submitted")
+// };
     render(){
         return(
             <>
                 <h1>New Attendant</h1>
-            <form onSubmit={this.handleSubmit}>    
+            <form onSubmit={this.props.onSubmit}>    
                 <div className="form-group">
                     <label>First Name</label>
                     <input 

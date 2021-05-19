@@ -1,9 +1,12 @@
 import React,{Component} from 'react';
-import Navbar from '../components/navbar.js';
 import BadgesList from '../components/badgeslist.js';
+import PageLoading from '../components/pageloading.js';
+import PageError from '../components/pageerror.js';
+import{Link} from 'react-router-dom';
 import './styles/badges.css';
 import '../styles/badgeslist.css';
 import confLogo from '../images/badge-header.svg';
+import api from '../api.js';
 
 
 
@@ -12,42 +15,31 @@ class Badges extends Component {
         super(props)
         console.log("1- Constructor")
         this.state = {
-            data: []
+            data: undefined,
+            error: null,
+            loading: true
         }
     }
+    // state = {
+    //     data: undefined,
+    //     error: null,
+    //     loading: true
+    // }
     componentDidMount(){
         console.log("3. Component Did Mount")
-setTimeout(()=>{this.setState(
-	{data:[
-                {
-                  id: "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-                  firstName: "Freda",
-                  lastName: "Grady",
-                  email: "Leann_Berge@gmail.com",
-                  jobTitle: "Legacy Brand Director",
-                  twitter: "FredaGrady22221-7573",
-                  avatarUrl: "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon"
-                },
-                {
-                  id: "d00d3614-101a-44ca-b6c2-0be075aeed3d",
-                  firstName: "Major",
-                  lastName: "Rodriguez",
-                  email: "Ilene66@hotmail.com",
-                  jobTitle: "Human Research Architect",
-                  twitter: "ajorRodriguez61545",
-                  avatarUrl: "https://www.gravatar.com/avatar/d57a8be8cb9219609905da25d5f3e50a?d=identicon"
-                },
-                {
-                  id: "63c03386-33a2-4512-9ac1-354ad7bec5e9",
-                  firstName: "Daphney",
-                  lastName: "Torphy",
-                  email: "Ron61@hotmail.com",
-                  jobTitle: "National Markets Officer",
-                  twitter: "DaphneyTorphy96105",
-                  avatarUrl: "https://www.gravatar.com/avatar/e74e87d40e55b9ff9791c78892e55cb7?d=identicon"
-                }
-              ]
-})},3000)}
+        this.fetchData()
+    }
+    
+    fetchData = async ()=>{ //we define the function because we could use it many times
+        this.setState({loading: true, error:null})  //We initialize original values in loading and error for each request
+        try{
+            const data = await api.badges.list(); //We intialize data value empty
+            this.setState({loading: false, data: data}) //We add as prop of state.data and change loading to false
+        }catch(error){ 
+            this.setState({loading: false, error: error}) //We add change the loading property
+    
+        }
+    }
     componentDidUpdate(prevProps, prevState){
         console.log('5. componentDidUpdate()')
         console.log({
@@ -63,36 +55,47 @@ setTimeout(()=>{this.setState(
         console.log('6. Component Will Mount')
     }
     render(){
-        console.log("2. Render")
-        return(
-            <>
-
-                <main className="Badge">
-                    <div className="Badges__hero">
-                        <picture className="Badge__container">
-                            <img className="Badges_conf_logo" src={confLogo} alt="Logo"/>
-                        </picture>
+        console.log("2. Render") 
+        if(this.state.loading === true){ //We evaluate if loading is true
+            return(<PageLoading/>)
+        }
+        if (this.state.error ){
+            return (<PageError error={this.state.error}/>)
+        }
+        // if (this.state.data == ""){
+        //     return (
+        //         <>
+        //         <h3>Suaveeee</h3>
+        //         </>
+        //         ) 
+        //  }
+        if(this.state.data.length > 0){
+            return(
+                <>
+                    <main className="Badge">
+                        <div className="Badges__hero">
+                            <picture className="Badge__container">
+                                <img className="Badges_conf_logo" src={confLogo} alt="Logo"/>
+                            </picture>
+                        </div>
+                    <div className="Badge__container">
+                        <div className="Badges__buttons">
+                            <Link to="./badges/new" className="btn btn-primary">New Badge</Link>
+    
+                        </div>
                     </div>
-                <div className="Badge__container">
-                    <div className="Badges__buttons">
-                        <a href="./badges/new" className="btn btn-primary">New Badge</a>
-
-                    </div>
-                </div>
-                <section className="BadgesList">
-                    {this.state.data.map(e=>
-                    <BadgesList key={e.id}
-                        firstName= {e.firstName}
-                        lastName= {e.lastName}
-                        jobTitle= {e.jobTitle}
-                        twitter={e.twitter}
-                        avatarUrl={e.avatarUrl}
-                    />)}
-                </section>
-
-                </main>
-            </>
-        )
+                    <section className="BadgesList">
+                            {console.log("You must see this",`${this.state.data.length}`)}
+                            {this.state.data.map((badge)=><BadgesList badges={badge} key={badge.id}/>)}
+                            {/*We print each card that is called from API */}
+                    </section>
+    
+                    </main>
+                </>
+            )
+        }
+      
+        
 
     }
 }
