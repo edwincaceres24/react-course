@@ -40,11 +40,12 @@ class GravatarImage extends Component {
         }
         render(){
             const email = this.props.email,
+                userName= this.props.userName,
                 hash= md5(email);
             this.myFunction(hash);
             return(
     <>
-        <img src={`https://www.gravatar.com/avatar/${hash}?d=identicon`} alt="Avatar" className="Badge__avatar"/>
+        <img src={`https://www.gravatar.com/avatar/${hash}?d=identicon`} alt={`Photo of ${userName}`} className="Badge__avatar" loading="lazy" />
     </>
     )
 }

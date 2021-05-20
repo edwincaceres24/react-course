@@ -1,15 +1,15 @@
 import React,{Component} from 'react';
 import Badge from '../components/badge.js';
-import LifeCycle from '../components/lifecycle.js';
 import logo from '../images/platziconf-logo.svg';
 import BadgeForm from '../components/badgeform.js';
 import '../styles/badge.css';
 import api from '../api.js';
 import PageLoading from '../components/pageloading';
 
-class BadgeNew extends Component {
+class BadgeEdit extends Component {
     state={
-       
+        loading:false,
+        error: null,       
         form: {
         firstName: '',
         lastName: '',
@@ -18,6 +18,21 @@ class BadgeNew extends Component {
         twitter:'',
         avatarUrl: ''
     }}; //Inicializamos el un nuevo state
+
+    componentDidMount(){
+      this.fetchData()
+    }
+
+    fetchData = async e=>{
+      this.setState({loading:true, error:null}) 
+      try {
+        const data =  await api.badges.read(this.props.match.params.badgeId)
+        this.setState({loading: false, form: data})
+        }
+      catch (error){
+        this.setState({error: error})
+      }
+    }
     handleChange=e=>{
 
         this.setState({
@@ -36,7 +51,7 @@ class BadgeNew extends Component {
             error: null
         })
         try {
-            await api.badges.create(this.state.form);
+            await api.badges.update(this.props.match.params.badgeId ,this.state.form);
             this.setState({loading: false})
             this.props.history.push("/badges")
         }
@@ -71,7 +86,7 @@ class BadgeNew extends Component {
                     />
                 </div>
                 <div className="col-6">
-                <h1>New Attendant</h1>
+                <h1>New Edit</h1>
                     <BadgeForm 
                         formValues={this.state.form}
                         onChange= {this.handleChange} 
@@ -90,4 +105,4 @@ class BadgeNew extends Component {
 }
 
 
-export default BadgeNew
+export default BadgeEdit

@@ -5,6 +5,7 @@ import BadgeNew from '../pages/badgenew.js'
 import LayoutComponent from '../components/layoutcomponent.js'
 import NotFound from '../pages/notfound.js'
 import HomePage from '../pages/home.js'
+import BadgeEdit from '../pages/badgeedit.js'
 
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/badges" component={Badges} />
                         <Route exact path="/badges/new" component={BadgeNew} />
+                        <Route exact path="/badges/:badgeId/edit" component={BadgeEdit} />
                         <Route component={NotFound} />
                     </Switch>
                 </LayoutComponent>

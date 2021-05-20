@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
 import '../styles/badgeslist.css';
 import {Link} from 'react-router-dom';
-import twitter from '../images/twitter.svg';
 import Gravatar from './gravatar.js';
+import editIcon from '../images/edit.png';
 
 
 class BadgesList extends Component{
+ 
   render(){
     console.log("From BL",this.props.badges)
     if (this.props.badges.length===0){
@@ -20,7 +21,7 @@ class BadgesList extends Component{
 	    <>
 	  <article className="badges--list-container">
       <picture className="badges--list-image">
-        <Gravatar email={this.props.badges.email} />
+        <Gravatar email={this.props.badges.email}  userName={`${this.props.badges.firstName} ${this.props.badges.lastName}`} />
       </picture>
       <div className="badges--list-info">
         <h3 className="badges--list-title">{this.props.badges.firstName} {this.props.badges.lastName}</h3>
@@ -30,7 +31,12 @@ class BadgesList extends Component{
           </p>
         <p>{this.props.badges.jobTitle}</p>
       </div>
-    </article>
+      <Link to={`/badges/${this.props.badges.id}/edit`} className="badges--list-link">
+      <picture className="badges--edit-button"> 
+        <img src={editIcon} alt="Edit Button" className="badges--edit-img"/>
+      </picture>
+      </Link>
+    </article>    
       </>
 
     )
