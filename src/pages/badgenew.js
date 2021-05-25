@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 import Badge from '../components/badge.js';
 import LifeCycle from '../components/lifecycle.js';
-import logo from '../images/platziconf-logo.svg';
 import BadgeForm from '../components/badgeform.js';
 import '../styles/badge.css';
 import api from '../api.js';
 import PageLoading from '../components/pageloading';
+import BadgeLogo from '../components/badgelogo';
 
 class BadgeNew extends Component {
     state={
@@ -54,9 +54,7 @@ class BadgeNew extends Component {
         }
         return(
     <main>
-        <div className="BadgeNew__hero">
-            <img  src={logo} alt="Logo"/>
-        </div>
+       <BadgeLogo name=""/>
         <section className="container">
             <div className="row">
                 <div className="col-6">

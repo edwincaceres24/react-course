@@ -5,14 +5,17 @@ import '../styles/badge.css';
 
 class Badge extends Component{  //Creamos la clase extendemos la propieadad de ReactComponent
     render(){
-        const {firstName,lastName,jobTitle,email,twitter}=this.props; // similar to this.props.LastName etc...
+        const {firstName,lastName,jobTitle,twitter}=this.props; // similar to this.props.LastName etc...
+        console.log("Here should be the email",this.props.email)
         return(
             <section className="Badge">
                 <figure className="Badge__header">
                         <img src={logo} alt="img" />
                 </figure>
                 <figure className="Badge__section-name">
-                        <GravatarImage email={email} />
+
+                       <GravatarImage email={this.props.email} />
+
                         <figcaption>
                 <h1>{firstName} {lastName}</h1>
                         </figcaption>

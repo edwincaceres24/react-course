@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Badge from '../components/badge.js';
-import logo from '../images/platziconf-logo.svg';
 import BadgeForm from '../components/badgeform.js';
+import BadgeLogo from '../components/badgelogo.js';
 import '../styles/badge.css';
 import api from '../api.js';
 import PageLoading from '../components/pageloading';
@@ -69,9 +69,7 @@ class BadgeEdit extends Component {
         }
         return(
     <main>
-        <div className="BadgeNew__hero">
-            <img  src={logo} alt="Logo"/>
-        </div>
+       <BadgeLogo name="" />
         <section className="container">
             <div className="row">
                 <div className="col-6">

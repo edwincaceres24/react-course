@@ -51,7 +51,7 @@ class BadgeForm extends Component {
                 </div>
                 <div className="form-group">
                     <label>Twitter</label>
-                    <input onChange={this.props.onChange} className="form-control" type="text" name="twitter" placeholder="Twitter" value={this.props.formValues.Twitter}/>
+                    <input onChange={this.props.onChange} className="form-control" type="text" name="twitter" placeholder="Twitter" value={this.props.formValues.twitter}/>
                 </div>
                 <button onClick={this.handleClick} className="btn btn-primary">Save</button>   {/* Type submit es su valor por omisión */}
                 {this.props.error && <p className="text-danger">{this.props.error.message}</p>}

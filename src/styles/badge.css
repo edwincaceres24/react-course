@@ -23,8 +23,8 @@ h2,h1{
     justify-content: center;
 }
 
-.BadgeNew__hero > img{
-  width: 120px;
+.BadgeNew__img{
+  width: 150px;
 }
   
   .Badge__header {

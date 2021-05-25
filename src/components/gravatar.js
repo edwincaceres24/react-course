@@ -42,6 +42,7 @@ class GravatarImage extends Component {
             const email = this.props.email,
                 userName= this.props.userName,
                 hash= md5(email);
+                console.log(email)
             this.myFunction(hash);
             return(
     <>

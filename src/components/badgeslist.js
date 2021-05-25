@@ -8,7 +8,6 @@ import editIcon from '../images/edit.png';
 class BadgesList extends Component{
  
   render(){
-    console.log("From BL",this.props.badges)
     if (this.props.badges.length===0){
       return (
       <>
@@ -31,7 +30,7 @@ class BadgesList extends Component{
           </p>
         <p>{this.props.badges.jobTitle}</p>
       </div>
-      <Link to={`/badges/${this.props.badges.id}/edit`} className="badges--list-link">
+      <Link to={`/badges/${this.props.badges.id}`} className="badges--list-link">
       <picture className="badges--edit-button"> 
         <img src={editIcon} alt="Edit Button" className="badges--edit-img"/>
       </picture>
